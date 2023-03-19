@@ -3,19 +3,19 @@ from .locators import ProductPageLocators
 
 
 class ProductPage(BasePage):
-    def add_product_to_cart(self):
-        add_to_cart_button = self.browser.find_element(*ProductPageLocators.ADD_TO_CART_BUTTON)
-        add_to_cart_button.click()
+    def add_product_to_basket(self):
+        add_to_basket_button = self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET_BUTTON)
+        add_to_basket_button.click()
 
-    def should_be_right_cart_price(self):
+    def should_be_right_basket_price(self):
         product_price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
-        cart_total_message = self.browser.find_element(*ProductPageLocators.CART_TOTAL_MESSAGE).text
-        assert product_price == cart_total_message, 'Wrong cart total'
+        basket_total_message = self.browser.find_element(*ProductPageLocators.BASKET_TOTAL_MESSAGE).text
+        assert product_price == basket_total_message, 'Wrong basket total'
 
     def should_be_right_product_name_in_message(self):
         product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
-        add_to_cart_message = self.browser.find_element(*ProductPageLocators.ADD_TO_CART_MESSAGE).text
-        assert product_name == add_to_cart_message, 'Wrong product name in message'
+        add_to_basket_message = self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET_MESSAGE).text
+        assert product_name == add_to_basket_message, 'Wrong product name in message'
 
     def should_disappear_success_message(self):
         assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE),\
