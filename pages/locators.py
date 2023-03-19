@@ -2,8 +2,14 @@ from selenium.webdriver.common.by import By
 
 
 class BasePageLocators():
+    CART_LINK = (By.CSS_SELECTOR, '.btn-group a.btn.btn-default')
     LOGIN_LINK = (By.CSS_SELECTOR, '#login_link')
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+
+
+class BasketPageLocators():
+    EMPTY_CART_MESSAGE = (By.CSS_SELECTOR, '#content_inner p')
+    FIRST_ITEM_AT_CART = (By.CSS_SELECTOR, '#basket_formset .basket-items:nth-of-type(1)')
 
 
 class MainPageLocators():

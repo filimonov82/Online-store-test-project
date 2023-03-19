@@ -14,6 +14,10 @@ class BasePage():
         self.url = url
         # self.browser.implicitly_wait(timeout)
 
+    def go_to_cart(self):
+        cart_link = self.browser.find_element(*BasePageLocators.CART_LINK)
+        cart_link.click()
+
     def go_to_login_page(self):
         login_link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
         login_link.click()
@@ -42,7 +46,8 @@ class BasePage():
         return False
 
     def should_be_login_link(self):
-        assert self.is_element_present(*BasePageLocators.LOGIN_LINK), 'Login link is not presented'
+        assert self.is_element_present(*BasePageLocators.LOGIN_LINK),\
+            'Login link is not presented'
 
     def solve_quiz_and_get_code(self):
         alert = self.browser.switch_to.alert
