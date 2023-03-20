@@ -1,4 +1,4 @@
-# Online-store-test-project
+# QA UI AUTOMATION
 Тестирование производилось при помощи selenium webdriver и языка python. Используется паттерн проектирования Page Object.
 
 Структура проекта:
